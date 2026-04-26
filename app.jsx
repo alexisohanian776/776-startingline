@@ -428,7 +428,7 @@ function Waitlist() {
       <h2 className="waitlist-h2">
         Get on the line.
       </h2>
-      <p className="waitlist-p">Two lists. One for SL/26 invite consideration — vetted by hand. 
+      <p className="waitlist-p">Two lists. One for SL/26 invite consideration — vetted by hand.<br />
 One for what we publish in the meantime.
 
       </p>
