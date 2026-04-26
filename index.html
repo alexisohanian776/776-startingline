@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SL/26 — The Starting Line Conference</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" fill="#18130E"/>
+<text x="400" y="320" text-anchor="middle" font-family="Anton, Helvetica, sans-serif" font-size="180" fill="#FF0F5C" letter-spacing="-4">SL/26</text>
+<rect x="280" y="350" width="240" height="14" fill="#FF0F5C"/>
+<text x="400" y="420" text-anchor="middle" font-family="Helvetica, sans-serif" font-size="22" fill="#F4EFE6" letter-spacing="6">THE STARTING LINE</text>
+</svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+<script type="text/babel">
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "sl-pink",
+  "typeface": "display",
+  "vlayout": "grid",
+  "density": "regular",
+  "showHeroVideo": true
+}/*EDITMODE-END*/;
+
+const ACCENT_MAP = {
+  "sl-pink": "#FF0F5C",
+  "track-red": "#E63B14",
+  "turf": "#1F6B3A",
+  "court": "#F26A1F",
+  "plum": "#5B2A56"
+};
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [video, setVideo] = React.useState(null);
+
+  React.useEffect(() => {
+    document.body.dataset.density = t.density;
+    document.body.dataset.typeface = t.typeface;
+    document.body.dataset.vlayout = t.vlayout;
+    document.documentElement.style.setProperty('--accent', ACCENT_MAP[t.accent] || ACCENT_MAP['track-red']);
+  }, [t]);
+
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <VideoMosaic openVideo={setVideo} />
+        <Speakers />
+        <Venue />
+        <Press />
+        <Sponsors />
+        <Waitlist />
+      </main>
+      <Footer />
+      <Theater video={video} onClose={() => setVideo(null)} />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Accent">
+          <TweakRadio
+            label="Sport color"
+            value={t.accent}
+            options={[
+              { value: 'sl-pink', label: 'SL' },
+              { value: 'track-red', label: 'Track' },
+              { value: 'court', label: 'Court' },
+              { value: 'turf', label: 'Turf' },
+              { value: 'plum', label: 'Plum' },
+            ]}
+            onChange={(v) => setTweak('accent', v)}
+          />
+        </TweakSection>
+
+        <TweakSection label="Typography">
+          <TweakRadio
+            label="Display"
+            value={t.typeface}
+            options={[
+              { value: 'display', label: 'Anton' },
+              { value: 'serif', label: 'Fraunces' },
+              { value: 'mono', label: 'Mono' },
+            ]}
+            onChange={(v) => setTweak('typeface', v)}
+          />
+        </TweakSection>
+
+        <TweakSection label="Video layout">
+          <TweakRadio
+            label="Sessions"
+            value={t.vlayout}
+            options={[
+              { value: 'mosaic', label: 'Mosaic' },
+              { value: 'grid', label: 'Grid' },
+              { value: 'strip', label: 'Strip' },
+            ]}
+            onChange={(v) => setTweak('vlayout', v)}
+          />
+        </TweakSection>
+
+        <TweakSection label="Density">
+          <TweakRadio
+            label="Spacing"
+            value={t.density}
+            options={['compact', 'regular', 'comfy']}
+            onChange={(v) => setTweak('density', v)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
