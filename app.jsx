@@ -2,12 +2,12 @@
 
 // Conference SL/25 video data (from playlist PLxMBSfqMrDTV0nIstFP-N3gNlUDZQkcU7)
 const SL25_VIDEOS = [
-{ id: '3NxAhPWIOlY', no: '01', title: 'Opening — The Starting Line', speaker: 'Alexis Ohanian', org: 'Seven Seven Six', topic: 'Welcome / The Thesis' },
-{ id: 'Jf69gAhIsgY', no: '02', title: 'Builders on the Field', speaker: 'Panel', org: 'SL/25', topic: 'Live demo block' },
-{ id: '4rEFsWWbuhU', no: '03', title: 'Computer Vision Meets the Game', speaker: 'ScorePlay', org: 'Sports Media AI', topic: 'CV / media' },
-{ id: 'ErNQYOwf1y8', no: '04', title: 'Performance, Recovery, Reality', speaker: 'Athlete + Founder', org: 'ATHLOS', topic: 'Athlete tech' },
-{ id: 'cR8YFcNaFAI', no: '05', title: 'Opening — The Starting Line', speaker: 'The Realest', org: 'Provenance', topic: 'Trust / commerce' },
-{ id: 'KvZh6DFVVSs', no: '06', title: 'Closing — The Finish Line', speaker: 'Alexis Ohanian', org: 'Seven Seven Six', topic: 'Wrap + what\'s next' }];
+{ id: '3NxAhPWIOlY', no: '01', title: 'Athlete Equity Changes Everything', speaker: 'Gabby Thomas', org: 'ATHLOS' },
+{ id: 'Jf69gAhIsgY', no: '02', title: 'Sports Are Magic', speaker: 'Jordy Leiser', org: 'Jump' },
+{ id: '4rEFsWWbuhU', no: '03', title: 'Reinventing Golf with TGL', speaker: 'Mike McCarley', org: 'TMRW Sports' },
+{ id: 'ErNQYOwf1y8', no: '04', title: 'Live Content Can’t Be Scripted', speaker: 'Vic Tixier', org: 'ScorePlay' },
+{ id: 'cR8YFcNaFAI', no: '05', title: 'The $423B Collectibles Revolution', speaker: 'DJ Skee', org: 'Realest' },
+{ id: 'KvZh6DFVVSs', no: '06', title: 'Building Superfans', speaker: 'Megan Duong', org: 'Plot' }];
 
 
 const PRESS_QUOTES = [
@@ -230,7 +230,7 @@ function VideoCard({ video, index, onOpen }) {
         <div className="vc-sub">
           <span>{video.speaker}</span>
           <span className="dot-sep">·</span>
-          <span className="vc-topic">{video.topic}</span>
+          <span className="vc-topic">{video.org}</span>
         </div>
       </div>
     </article>);
@@ -269,7 +269,7 @@ function Theater({ video, onClose }) {
         <div className="theater-foot">
           <div>
             <div className="theater-title">{video.title}</div>
-            <div className="theater-sub">{video.speaker} · {video.org} · {video.topic}</div>
+            <div className="theater-sub">{video.speaker} · {video.org}</div>
           </div>
         </div>
       </div>
