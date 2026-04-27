@@ -11,13 +11,13 @@ const SL25_VIDEOS = [
 
 
 const PRESS_QUOTES = [
-{ quote: 'No question the best conference I’ve attended in years. Every company was fascinating and made me want to invest on the spot. That never happens, but they curated it brilliantly.', source: 'Wyc Grousbeck, Lead Owner, Boston Celtics' },
-{ quote: 'Less stage, more substance. Real demos, real builders, no buzzword theater.', source: 'Front Office Sports' },
-{ quote: 'The room you wanted to be in if you cared about where sports goes next.', source: 'The Information' }];
+{ quote: 'No question the best conference I’ve attended in years. Every company was fascinating and made me want to invest on the spot. That never happens, but they curated it brilliantly.', source: 'Wyc Grousbeck, Lead Owner, Boston Celtics', headshot: null },
+{ quote: 'Less stage, more substance. Real demos, real builders, no buzzword theater.', source: 'Front Office Sports', headshot: null },
+{ quote: 'The room you wanted to be in if you cared about where sports goes next.', source: 'The Information', headshot: null }];
 
 
 const SPEAKERS_25 = [
-{ name: 'Alexis Ohanian', role: 'Founder, Seven Seven Six' }];
+{ name: 'Alexis Ohanian', role: 'Founder, Seven Seven Six', headshot: null }];
 
 
 // ─── ICONS ─────────────────────────────────────────────────────────
@@ -60,7 +60,7 @@ function Header() {
           <a href="#sessions">Sessions</a>
           <a href="#speakers">Speakers</a>
           <a href="#venue">Venue</a>
-          <a href="#press">Press</a>
+          <a href="#press">Testimonials</a>
         </nav>
         <a href="#waitlist" className="site-hd-cta">
           Request Invite <ArrowIcon />
@@ -292,6 +292,11 @@ function Speakers() {
         {SPEAKERS_25.map((s, i) =>
         <li key={s.name} className="sp-row">
             <span className="sp-no">{String(i + 1).padStart(2, '0')}</span>
+            <span
+              className="headshot-hept sp-headshot"
+              style={s.headshot ? { backgroundImage: `url(${s.headshot})` } : undefined}
+              aria-hidden="true"
+            />
             <span className="sp-name">{s.name}</span>
             <span className="sp-dots" aria-hidden="true" />
             <span className="sp-role">{s.role}</span>
@@ -299,6 +304,7 @@ function Speakers() {
         )}
         <li className="sp-row sp-row--ghost">
           <span className="sp-no">02</span>
+          <span className="headshot-hept sp-headshot" aria-hidden="true" />
           <span className="sp-name">MORE SPEAKERS COMING SOON</span>
           <span className="sp-dots" aria-hidden="true" />
           <span className="sp-role">SL/26 cohort — TBA</span>
@@ -355,14 +361,21 @@ function Press() {
     <section id="press" className="press">
       <div className="press-hd">
         <div className="section-no">§ 05</div>
-        <div className="section-label">Press</div>
+        <div className="section-label">Testimonials</div>
       </div>
       <div className="press-grid">
         {PRESS_QUOTES.map((q) =>
         <figure key={q.source} className="press-q">
             <div className="press-mark">"</div>
             <blockquote>{q.quote}</blockquote>
-            <figcaption>— {q.source}</figcaption>
+            <figcaption>
+              <span
+                className="headshot-hept"
+                style={q.headshot ? { backgroundImage: `url(${q.headshot})` } : undefined}
+                aria-hidden="true"
+              />
+              <span>— {q.source}</span>
+            </figcaption>
           </figure>
         )}
       </div>

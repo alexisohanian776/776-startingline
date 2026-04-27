@@ -658,12 +658,18 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 }
 .sp-row {
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: auto auto auto 1fr auto;
   gap: 24px;
-  align-items: baseline;
+  align-items: center;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
   transition: background 0.2s, padding 0.2s;
+}
+.sp-headshot {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  align-self: center;
 }
 .sp-row:hover { padding-left: 12px; padding-right: 12px; background: var(--paper-2); }
 .sp-row--ghost { color: var(--ink-soft); }
@@ -801,11 +807,30 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
   text-wrap: balance;
 }
 .press-q figcaption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-family: var(--mono);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-soft);
+}
+.press-q figcaption .headshot-hept {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+}
+
+/* ─── HEPTAGON HEADSHOT ─────────────────────────── */
+.headshot-hept {
+  display: inline-block;
+  background-color: var(--paper-2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(50% 0%, 89.1% 18.8%, 98.7% 61.1%, 71.7% 95%, 28.3% 95%, 1.3% 61.1%, 10.9% 18.8%);
+  -webkit-clip-path: polygon(50% 0%, 89.1% 18.8%, 98.7% 61.1%, 71.7% 95%, 28.3% 95%, 1.3% 61.1%, 10.9% 18.8%);
 }
 
 /* ─── GALLERY ───────────────────────────────────── */
@@ -1115,7 +1140,7 @@ body[data-vlayout="grid"] .vc--tall, body[data-vlayout="grid"] .vc--wide { grid-
   .sessions-hd { grid-template-columns: 1fr; }
   .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
   .vc, .vc--tall, .vc--wide { grid-column: span 1; grid-row: span 1; }
-  .sp-row { grid-template-columns: auto 1fr; }
+  .sp-row { grid-template-columns: auto auto 1fr; }
   .sp-dots, .sp-role { display: none; }
   .gallery-grid { grid-template-columns: repeat(4, 1fr); }
   .gal--1 { grid-column: span 4; grid-row: span 2; }
