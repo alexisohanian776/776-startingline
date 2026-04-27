@@ -17,7 +17,7 @@ const PRESS_QUOTES = [
 
 
 const SPEAKERS_25 = [
-{ name: 'Alexis Ohanian', role: 'Founder, Seven Seven Six', headshot: null }];
+{ name: 'Alexis Ohanian', role: 'Founder, Seven Seven Six', headshot: 'assets/alexis-ohanian.jpg' }];
 
 
 // ─── ICONS ─────────────────────────────────────────────────────────
