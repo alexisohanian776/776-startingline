@@ -5,9 +5,9 @@ const SL25_VIDEOS = [
 { id: '3NxAhPWIOlY', no: '01', title: 'Athlete Equity Changes Everything', speaker: 'Gabby Thomas', org: 'ATHLOS' },
 { id: 'Jf69gAhIsgY', no: '02', title: 'Sports Are Magic', speaker: 'Jordy Leiser', org: 'Jump' },
 { id: '4rEFsWWbuhU', no: '03', title: 'Reinventing Golf with TGL', speaker: 'Mike McCarley', org: 'TMRW Sports' },
-{ id: 'ErNQYOwf1y8', no: '04', title: 'Live Content Can’t Be Scripted', speaker: 'Vic Tixier', org: 'ScorePlay' },
-{ id: 'cR8YFcNaFAI', no: '05', title: 'The $423B Collectibles Revolution', speaker: 'DJ Skee', org: 'Realest' },
-{ id: 'KvZh6DFVVSs', no: '06', title: 'Building Superfans', speaker: 'Megan Duong', org: 'Plot' }];
+{ id: 'ErNQYOwf1y8', no: '04', title: 'The $423B Collectibles Revolution', speaker: 'DJ Skee', org: 'Realest' },
+{ id: 'cR8YFcNaFAI', no: '05', title: 'Building Superfans', speaker: 'Megan Duong', org: 'Plot' },
+{ id: 'KvZh6DFVVSs', no: '06', title: 'Live Content Can’t Be Scripted', speaker: 'Vic Tixier', org: 'ScorePlay' }];
 
 
 const PRESS_QUOTES = [
