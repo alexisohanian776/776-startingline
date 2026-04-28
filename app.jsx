@@ -407,7 +407,7 @@ function Gallery() {
 
 // ─── SPONSORS ──────────────────────────────────────────────────────
 function Sponsors() {
-  const partners = ['ATHLOS', 'Cash App', 'Essentia Water', 'ION Television', 'Tiffany & Co.'];
+  const partners = ['Airbnb', 'ATHLOS', 'Cash App', 'Essentia Water', 'ION Television', 'Tiffany & Co.'];
   return (
     <section className="sponsors">
       <div className="sponsors-hd">
@@ -433,6 +433,9 @@ function Waitlist() {
   const submit = (e) => {
     e.preventDefault();
     if (!email) return;
+    const subject = encodeURIComponent('SL/26 invite request');
+    const body = encodeURIComponent(`Email: ${email}\n\nI'd like to be considered for the SL/26 invite list.`);
+    window.location.href = `mailto:k@athlos.com?subject=${subject}&body=${body}`;
     setDone(true);
   };
   return (
@@ -455,30 +458,44 @@ One for what we publish in the meantime.
         </button>
       </div>
 
-      {!done ?
+      {type === 'invite' && !done &&
       <form className="waitlist-form" onSubmit={submit}>
           <input
           type="email"
-          placeholder={type === 'invite' ? 'work email' : 'your email'}
+          placeholder="work email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required />
-        
-          <button type="submit">
-            {type === 'invite' ? 'Request invite' : 'Subscribe'} <ArrowIcon size={16} />
-          </button>
-        </form> :
 
+          <button type="submit">
+            Request invite <ArrowIcon size={16} />
+          </button>
+        </form>
+      }
+
+      {type === 'invite' && done &&
       <div className="waitlist-done">
           <div className="check">✓</div>
           <div>
             <div className="waitlist-done-h">You're on the list.</div>
             <div className="waitlist-done-p">
-              {type === 'invite' ?
-            "We review every request. Expect to hear from us by August." :
-            "First drop hits in two weeks."}
+              We review every request. Expect to hear from us by August.
             </div>
           </div>
+        </div>
+      }
+
+      {type === 'news' &&
+      <div className="waitlist-news">
+          <iframe
+          src="https://subscribe-forms.beehiiv.com/ab15edf6-94dd-4b8f-9d03-d2dff9d930d6"
+          className="beehiiv-embed"
+          data-test-id="beehiiv-embed"
+          frameBorder="0"
+          scrolling="no"
+          style={{ width: '560px', height: '291px', margin: 0, border: 0, borderRadius: 0, backgroundColor: 'transparent', boxShadow: 'none', maxWidth: '100%' }}
+          title="Subscribe to the newsletter" />
+
         </div>
       }
 
