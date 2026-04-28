@@ -63,7 +63,7 @@ function Header() {
           <a href="#press">Testimonials</a>
         </nav>
         <a href="#waitlist" className="site-hd-cta">
-          Request Invite <ArrowIcon />
+          Get The Newsletter <ArrowIcon />
         </a>
       </div>
     </header>);
