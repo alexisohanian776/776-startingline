@@ -11,7 +11,7 @@ const SL25_VIDEOS = [
 
 
 const PRESS_QUOTES = [
-{ quote: 'No question the best conference I’ve attended in years. Every company was fascinating and made me want to invest on the spot. That never happens, but they curated it brilliantly.', source: 'Wyc Grousbeck, Lead Owner, Boston Celtics', headshot: null },
+{ quote: 'No question the best conference I’ve attended in years. Every company was fascinating and made me want to invest on the spot. That never happens, but they curated it brilliantly.', source: 'Wyc Grousbeck, Lead Owner, Boston Celtics', headshot: 'assets/wyc-grousbeck.jpg' },
 { quote: 'Less stage, more substance. Real demos, real builders, no buzzword theater.', source: 'Front Office Sports', headshot: null },
 { quote: 'The room you wanted to be in if you cared about where sports goes next.', source: 'The Information', headshot: null }];
 
