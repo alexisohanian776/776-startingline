@@ -427,77 +427,26 @@ function Sponsors() {
 
 // ─── WAITLIST + NEWSLETTER ─────────────────────────────────────────
 function Waitlist() {
-  const [email, setEmail] = React.useState('');
-  const [done, setDone] = React.useState(false);
-  const [type, setType] = React.useState('invite');
-  const submit = (e) => {
-    e.preventDefault();
-    if (!email) return;
-    const subject = encodeURIComponent('SL/26 invite request');
-    const body = encodeURIComponent(`Email: ${email}\n\nI'd like to be considered for the SL/26 invite list.`);
-    window.location.href = `mailto:k@athlos.com?subject=${subject}&body=${body}`;
-    setDone(true);
-  };
   return (
     <section id="waitlist" className="waitlist" style={{ backgroundColor: "rgb(42, 10, 28)" }}>
       <div className="waitlist-no">§ 08</div>
       <h2 className="waitlist-h2">
         Get on the line.
       </h2>
-      <p className="waitlist-p">Two lists. One for SL/26 invite consideration — vetted by hand.<br />
-One for what we publish in the meantime.
-
+      <p className="waitlist-p">
+        For everything we publish in the meantime.
       </p>
 
-      <div className="waitlist-tabs">
-        <button className={type === 'invite' ? 'is-on' : ''} onClick={() => setType('invite')}>
-          Request Invite
-        </button>
-        <button className={type === 'news' ? 'is-on' : ''} onClick={() => setType('news')}>
-          Newsletter
-        </button>
-      </div>
-
-      {type === 'invite' && !done &&
-      <form className="waitlist-form" onSubmit={submit}>
-          <input
-          type="email"
-          placeholder="work email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required />
-
-          <button type="submit">
-            Request invite <ArrowIcon size={16} />
-          </button>
-        </form>
-      }
-
-      {type === 'invite' && done &&
-      <div className="waitlist-done">
-          <div className="check">✓</div>
-          <div>
-            <div className="waitlist-done-h">You're on the list.</div>
-            <div className="waitlist-done-p">
-              We review every request. Expect to hear from us by August.
-            </div>
-          </div>
-        </div>
-      }
-
-      {type === 'news' &&
       <div className="waitlist-news">
-          <iframe
+        <iframe
           src="https://subscribe-forms.beehiiv.com/ab15edf6-94dd-4b8f-9d03-d2dff9d930d6"
           className="beehiiv-embed"
           data-test-id="beehiiv-embed"
           frameBorder="0"
           scrolling="no"
-          style={{ width: '560px', height: '291px', margin: 0, border: 0, borderRadius: 0, backgroundColor: 'transparent', boxShadow: 'none', maxWidth: '100%' }}
+          style={{ width: '560px', height: '291px', margin: 0, border: 0, backgroundColor: 'transparent', boxShadow: 'none', maxWidth: '100%' }}
           title="Subscribe to the newsletter" />
-
-        </div>
-      }
+      </div>
 
       <div className="waitlist-foot">
         Hosted by <a href="http://sevensevensix.com" target="_blank" rel="noreferrer">Seven Seven Six</a> &nbsp;&amp;&nbsp;
