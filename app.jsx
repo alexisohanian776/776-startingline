@@ -407,7 +407,7 @@ function Gallery() {
 
 // ─── SPONSORS ──────────────────────────────────────────────────────
 function Sponsors() {
-  const partners = ['SKIMS', 'ScorePlay', 'The Realest', 'Plot', 'Jump', 'ATHLOS', '776'];
+  const partners = ['ATHLOS', 'Cash App', 'Essentia Water', 'ION Television', 'Tiffany & Co.'];
   return (
     <section className="sponsors">
       <div className="sponsors-hd">
