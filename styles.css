@@ -1046,11 +1046,11 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
   margin-top: 32px;
 }
 .waitlist-news iframe {
-  width: 560px !important;
-  height: 291px !important;
+  width: 400px !important;
+  height: 47px !important;
   max-width: 100% !important;
   border: 0 !important;
-  border-radius: 16px !important;
+  border-radius: 999px !important;
   background: var(--paper) !important;
   display: block;
 }

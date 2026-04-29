@@ -444,7 +444,7 @@ function Waitlist() {
           data-test-id="beehiiv-embed"
           frameBorder="0"
           scrolling="no"
-          style={{ width: '560px', height: '291px', margin: 0, border: 0, backgroundColor: 'transparent', boxShadow: 'none', maxWidth: '100%' }}
+          style={{ width: '400px', height: '47px', margin: 0, border: 0, backgroundColor: 'transparent', boxShadow: 'none', maxWidth: '100%' }}
           title="Subscribe to the newsletter" />
       </div>
 
