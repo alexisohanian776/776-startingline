@@ -221,7 +221,6 @@ function VideoCard({ video, index, onOpen }) {
 
         }
         <div className="vc-overlay">
-          <div className="vc-no">{video.no}</div>
           <div className="vc-play"><PlayIcon size={12} /> Play session</div>
         </div>
       </div>
