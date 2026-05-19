@@ -13,7 +13,7 @@ const SL25_VIDEOS = [
 const PRESS_QUOTES = [
 { quote: 'No question the best conference I’ve attended in years. Every company was fascinating and made me want to invest on the spot. That never happens, but they curated it brilliantly.', source: 'Wyc Grousbeck, Lead Owner, Boston Celtics', headshot: 'assets/wyc-grousbeck.jpg' },
 { quote: 'The conference was exceptionally compelling. It felt like a peek under the hood of what the future of sports will look like.', source: 'Rosalyn Durant, Executive Vice President, Programming & Acquisitions, ESPN', headshot: 'assets/rosalyn-durant.jpg' },
-{ quote: 'Less stage, more substance. Real demos, real builders, no buzzword theater.', source: 'Front Office Sports', headshot: null }];
+{ quote: 'If you’re interested in the ecosystem surrounding and building the future of sports, this is a must-attend event. It moves fast, it goes deep, and it doesn’t waste your time — which is exactly what a great conference should do.', source: 'Becca Van Dyck, Chief Marketing Officer, Airbnb (investor in women’s sports)', headshot: 'assets/becca-van-dyck.jpg' }];
 
 
 const SPEAKERS_25 = [
