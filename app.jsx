@@ -116,9 +116,6 @@ function Hero() {
             <div className="micro">Hosts</div>
             <div className="hero-foot-val">776 · ATHLOS</div>
           </div>
-          <a href="#waitlist" className="hero-foot-cta">
-            Request an invite <ArrowIcon size={16} />
-          </a>
         </div>
       </div>
 
