@@ -38,7 +38,7 @@ function Mark() {
   return (
     <div className="sl-mark">
       <img src="assets/sl-mark-sm.png" alt="SL/26" className="sl-mark-icon" />
-      <img src="assets/image9.png" alt="Starting Line" className="sl-mark-word" />
+      <img src="assets/starting-line-lockup.png" alt="The Starting Line" className="sl-mark-word" />
     </div>);
 
 }
