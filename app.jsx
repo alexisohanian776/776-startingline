@@ -37,7 +37,7 @@ const ArrowIcon = ({ size = 14 }) =>
 function Mark() {
   return (
     <div className="sl-mark">
-      <img src="assets/sl-mark-sm.png" alt="SL/26" className="sl-mark-icon" />
+      <img src="assets/sl-2026-lockup.png" alt="SL/2026" className="sl-mark-icon" />
       <img src="assets/starting-line-lockup.png" alt="The Starting Line" className="sl-mark-word" />
     </div>);
 

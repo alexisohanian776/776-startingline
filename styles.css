@@ -131,9 +131,8 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 .site-hd-mark { color: var(--ink); }
 .sl-mark { display: inline-flex; align-items: center; gap: 0; }
 .sl-mark-icon {
-  height: 36px !important;
-  width: 36px !important;
-  border-radius: 6px;
+  height: 38px !important;
+  width: auto !important;
   display: block;
   flex-shrink: 0;
   transform-origin: left center;
@@ -146,8 +145,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 .site-hd.is-scrolled .sl-mark-icon {
   opacity: 1;
   transform: translateX(0) scale(1);
-  max-width: 36px;
-  margin-right: 10px;
+  max-width: 140px;
 }
 .sl-mark-s {
   height: 22px !important; width: auto !important; display: block;
@@ -155,7 +153,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
   transition: height 0.3s cubic-bezier(.2,.7,.2,1);
 }
 .sl-mark-word {
-  height: 28px !important; width: auto !important; display: block;
+  height: 38px !important; width: auto !important; display: block;
   max-width: 360px;
   flex-shrink: 0;
   opacity: 1;
