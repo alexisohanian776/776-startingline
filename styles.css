@@ -129,7 +129,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
   gap: 32px;
 }
 .site-hd-mark { color: var(--ink); }
-.sl-mark { display: inline-flex; align-items: center; gap: 0; }
+.sl-mark { display: flex; align-items: center; gap: 0; }
 .sl-mark-icon {
   height: 38px !important;
   width: auto !important;
