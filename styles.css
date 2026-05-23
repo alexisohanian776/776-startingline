@@ -129,7 +129,26 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; }
   gap: 32px;
 }
 .site-hd-mark { color: var(--ink); }
-.sl-mark { display: flex; align-items: center; gap: 0; }
+.sl-mark { display: flex; align-items: center; gap: 10px; }
+.sl-mark-square {
+  height: 38px !important;
+  width: 38px !important;
+  border-radius: 6px;
+  display: block;
+  flex-shrink: 0;
+}
+.sl-mark-text { display: flex; align-items: center; gap: 0; overflow: hidden; }
+.sl-mark-line, .sl-mark-year {
+  height: 30px !important;
+  width: auto !important;
+  display: block;
+  opacity: 1;
+  transition: max-width 0.5s cubic-bezier(.2,.7,.2,1), opacity 0.3s cubic-bezier(.2,.7,.2,1);
+}
+.sl-mark-line { max-width: 360px; }
+.sl-mark-year { max-width: 0; opacity: 0; }
+.site-hd.is-scrolled .sl-mark-line { max-width: 0; opacity: 0; }
+.site-hd.is-scrolled .sl-mark-year { max-width: 200px; opacity: 1; }
 .sl-mark-icon {
   height: 38px !important;
   width: auto !important;
